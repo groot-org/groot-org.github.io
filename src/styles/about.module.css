@@ -1,0 +1,151 @@
+/******* START: PARENT CONTAINER *******/
+.about_main {
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px;
+    height: 100%;
+    padding: 20px 40px 0 80px;
+}
+/******* END: PARENT CONTAINER *******/
+
+.about_main > * {
+    width: 100%;
+}
+
+.about_main hr {
+    margin-bottom: 4px;
+    border: 1px solid #FF8B00;
+    background-color: #FF8B00;
+}
+
+.about_header {
+    align-self: end;
+    margin-bottom: 5px;
+    color: #BBB;
+    font-size: 30px;
+}
+
+.about_content {
+    text-align: justify;
+    text-justify: auto;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    font-size: 0.8em;
+    color: #8c959c;
+}
+
+.about_content a {
+    color: #FF8B00;
+}
+
+.self_portrait_desktop {
+    /* background:  */
+    /* top: transparent orange, faked with gradient */ 
+    /* linear-gradient(
+        rgba(255, 140, 0, 0.4), 
+        rgba(255, 140, 0, 0.4)
+    ), */
+    /* bottom: image */
+    /* url(../images/pictures/female-coderto-cat.png); */
+    width: 291px;
+    height: 314px;
+    margin-left: 12px;
+    border-radius: 4px;
+    float: right;
+}
+
+/* .self_portrait_desktop:hover {
+    background: 
+    linear-gradient(
+        rgba(255, 140, 0, 0), 
+        rgba(255, 140, 0, 0)
+    ),
+    url(../images/pictures/female-coderto-cat.png);
+} */
+
+.self_portrait_mobile {
+    display: none;
+}
+
+.about_content img {
+    width: 100%;
+}
+
+.skills_content {
+    text-align: center;
+    letter-spacing: 2.5px;
+    color: #8c959c;
+}
+
+.skills_mobile {
+    display: none;
+}
+
+.skills_content p {
+    margin: 6px 0;
+}
+
+.orange_separator {
+    font-size: 22px;
+    color: #FF8B00;
+}
+
+@media (max-width: 750px) {
+    .about_main {
+        padding: 20px;
+    }
+
+    .about_header {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .self_portrait_desktop {
+        display: none;
+    }
+
+    .picture_frame_mobile {
+        width: 50%;
+        min-width: 200px;
+        float: right;
+    }
+
+    .self_portrait_mobile {
+        display: flex;
+        max-width: 260px;
+        margin-left: 12px;
+    }
+
+    .skills_desktop {
+        display: none;
+    }
+
+    .skills_mobile {
+        display: block;
+    }
+
+    .skills_mobile > p {
+        padding-bottom: 8px;
+    }
+}
+
+@media (max-width: 580px) {
+    .about_main {
+        padding: 0 5px 0 5px;
+    }
+    
+    .picture_frame_mobile {
+        margin: 0 auto;
+        float: none;
+    }
+
+    .self_portrait_mobile {
+        margin: 0 auto;
+        margin-bottom: 8px;
+    }
+
+    .skills_content {
+        font-size: 14px;
+        letter-spacing: 1.5px;
+    }
+}

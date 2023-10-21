@@ -1,0 +1,239 @@
+html {
+    box-sizing: border-box;
+}
+
+/* The Universal Selector */
+*, /* All elements*/
+*::before,  /* All ::before pseudo-elements */
+*::after {  /* All ::after pseudo-elements */
+            /* height & width will now include border & padding by default but can be over-ridden as needed */
+    box-sizing: inherit;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: "Montserrat", "Sans-Serif";
+}
+
+body {
+    background-color: #181818;
+    min-height: 100vh;
+    color: white;
+}
+
+#___gatsby {                        /* gatbsy wrapper around content */
+    min-height: 100%;               /* make wrapper full-size of parent container */
+}
+
+#gatsby-focus-wrapper {             /* gatbsy wrapper around content */
+    min-height: 100%;               /* make wrapper full-size of parent container */
+}
+
+/* this is the top-level content container */
+#layout {
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+    grid-template-rows: 60px 1fr 30px;
+    grid-template-areas: 
+        'header header header'
+        'left-sidenav main right-sidenav'
+        'footer footer footer';
+    min-height: 100vh;
+    padding: 10px;
+}
+
+/* page <header> container */
+header {
+    grid-area: header;                  /* make the container span the two grid areas named 'header' */
+    display: flex;                      /* arrange #header-nav contents with flexbox */
+    flex-direction: row;                /* display #header-nav contents in a row */
+    justify-content: space-between;     /* two items in container, marry one to each end left & right */
+}
+
+header h1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid #E40203;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    color: #E40203;
+}
+
+header h1:hover {
+    background-color: #3b0a0a;
+}
+
+/* <nav> container in <header> */
+#header-nav {
+    display: flex;                      /* arrange #header-nav contents with flexbox */
+    flex-direction: row;                /* display #header-nav contents in a row */
+    justify-content: flex-end;          /* marry #header-nav contents to right-end of container */
+}
+
+/* class for <Link /> items in #header-nav */
+.navlink {
+    display: flex;                      /* this and following lines center text vertically */
+    flex-direction: row;
+    align-items: center;
+}
+
+#navlink-home {
+    color: #E40203;
+}
+
+#navlink-about {
+    color: #FF8B00;
+}
+
+#navlink-projects {
+    color: #FEED00;
+}
+
+#navlink-resources {
+    color: #38A000;
+}
+
+#navlink-contact {
+    color: #004DFF;
+}
+
+#header-nav {
+    display: flex;                      /* this and the next two lines center header nav links vertically */
+    flex-direction: row;
+    align-items: center;
+}
+
+#header-nav a {
+    margin: 0 15px;
+    padding: 8px;
+    height: 30px;
+    font-weight: 400;
+}
+
+#header-nav a:hover {
+    text-decoration: underline overline;
+    text-decoration-thickness: 2px;
+}
+
+#mobile-header-nav {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    top: 1rem;
+    right: 1rem;
+    z-index: 2;
+}
+
+#hamburger {
+    width: 40px;
+    height: 40px;
+}
+
+.hide-div {
+    display: none !important;
+}
+
+#mobile-header-menu {
+    width: 120px;
+    margin-top: 6px;
+    background-color: #212529;
+    border: 2px solid #E40203;
+    border-radius: 4px;
+}
+
+#mobile-header-menu a {
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: right;
+    padding: 3px;
+    font-weight: 600;
+}
+
+#sidenav {
+    grid-area: left-sidenav;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    margin-left: 10px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#sidenav img {
+    margin-top: 10px;
+    padding: 8px;
+    width: 40px;
+    
+}
+
+#sidenav img:hover {
+    border: 1px solid #A100F2;
+    background-color: #250038;
+    border-radius: 10px;
+}
+
+#main {
+    grid-area: main;                    /* place content in the grid area named 'main' */
+    padding-bottom: 30px;
+}
+
+#right-sidenav {
+    writing-mode: vertical-rl;
+    letter-spacing: 2px;
+}
+
+#right-sidenav a {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin-right: 10px;
+    margin-bottom: 50px;
+    padding: 8px 6px;
+    color: #A100F2;
+}
+
+#right-sidenav a:hover {
+    border: 1px solid #A100F2;
+    background-color: #250038;
+    border-radius: 10px;
+}
+
+#footer {
+    grid-area: footer;                  /* make the container span the two grid areas named 'footer' */
+    display: flex;                      /* this and the next two lines vertically center content in the footer */
+    flex-direction: column;
+    justify-content: center;
+}
+
+footer p {
+    text-align: center;
+    color: #BBB;
+    margin: 0 auto;
+}
+
+
+/******* START: TOGGLE HAMBURGER MENU ON SMALL SCREENS *******/
+@media (min-width: 700px) {
+    #mobile-header-nav {
+        display: none;
+    }
+}
+
+@media (max-width: 700px) {
+    #header-nav {
+        display: none;
+    }
+}
+/******* END: TOGGLE HAMBURGER MENU ON SMALL SCREENS *******/
